@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Schedu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Schedu 📆 </h1>
+    <p> </p>
+    <p>Built using ASP.NET Core and C#. Propose to change the way small businesses 
+        interact and organize the agenda. To help a costumer scheduling a service 
+        and to help a business with their agenda / reporting system. 
+    </p>
+    <p> </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Action:</th>
+                <th>Page:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Manage Businesses</td>
+                <td>
+                    <a asp-controller="Business" asp-action="Index">Go!</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Manage Services</td>
+                <td>
+                    <a asp-controller="Service" asp-action="Index">Go!</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Manage Agendas</td>
+                <td>
+                    <a asp-controller="Agenda" asp-action="Index">Go!</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Manage Users</td>
+                <td>
+                    <a asp-controller="User" asp-action="Index">Go!</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
