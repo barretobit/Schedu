@@ -31,4 +31,6 @@ Users could have access to the business agenda and, without spending time callin
 	- To perform the Code First Migration and create the local database to successfuly be used by Schedu it is only required to execute the command "Update-Database" in the Package Manager Console in Visual Studio
 
 
-### Credits: João Barreto | barretobit@gmail.com | Zürich 2022
+
+### Signature: 
+### João Barreto | barretobit@gmail.com | www.linkedin.com/in/barretobit | Zürich 2022

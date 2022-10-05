@@ -43,6 +43,7 @@ namespace Schedu.Models
 
 
         [DisplayName("Registry Date")]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime RegistryDate { get; set; }
 
 
