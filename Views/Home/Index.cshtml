@@ -2,44 +2,28 @@
     ViewData["Title"] = "Schedu";
 }
 
+
 <div class="text-center">
     <h1 class="display-4">Welcome to Schedu 📆 </h1>
-    <p> </p>
-    <p>Built using ASP.NET Core and C#. Propose to change the way small businesses 
-        interact and organize the agenda. To help a costumer scheduling a service 
-        and to help a business with their agenda / reporting system. 
+    <p>
+        Built using ASP.NET Core and C#. Propose to change the way small businesses
+        interact and organize the agenda. To help a costumer scheduling a service
+        and to help a business with their agenda / reporting system.
     </p>
-    <p> </p>
-    <table>
-        <thead>
-            <tr>
-                <th>Action:</th>
-                <th>Page:</th>
-            </tr>
-        </thead>
+    <table class="table-align-index">
         <tbody>
             <tr>
-                <td>Create Business</td>
                 <td>
-                    <a asp-controller="Business" asp-action="Index">Create</a>
+                    <a asp-controller="Business" asp-action="Index" class="btn btn-sm btn-secondary">
+                        Manage Businesses
+                    </a>
                 </td>
             </tr>
             <tr>
-                <td>Create Service</td>
                 <td>
-                    <a asp-controller="Service" asp-action="Index">Go!</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Manage Agenda</td>
-                <td>
-                    <a asp-controller="Agenda" asp-action="Index">Go!</a>
-                </td>
-            </tr>
-            <tr>
-                <td>Manage Users</td>
-                <td>
-                    <a asp-controller="User" asp-action="Index">Go!</a>
+                    <a asp-controller="BusinessOwner" asp-action="Index" class="btn btn-sm btn-secondary">
+                        Manage Business Owners
+                    </a>
                 </td>
             </tr>
         </tbody>

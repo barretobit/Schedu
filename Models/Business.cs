@@ -16,7 +16,6 @@ namespace Schedu.Models
 
 
         [DisplayName("Phone")]
-        //[MaxLength(9, ErrorMessage = "Phone number should only contain 9 digits.")]
         public int BusinessPhone { get; set; }
 
 
@@ -25,22 +24,8 @@ namespace Schedu.Models
         public string BusinessEmail { get; set; }
 
 
-        [Column(TypeName = "nvarchar(35)")]
-        [DisplayName("Owner Name")]
-        [Required]
-        public string OwnerName { get; set; }
-
-
-        [DisplayName("Owner Phone")]
-        //[MaxLength(9, ErrorMessage = "Phone number should only contain 9 digits.")]
-        public int OwnerPhone { get; set; }
-
-
-        [Column(TypeName = "nvarchar(50)")]
-        [DisplayName("Owner Email")]
-        [Required]
-        public string OwnerEmail { get; set; }
-
+        [DisplayName("Business Owner")]
+        public BusinessOwner BusinessOwner { get; set; }
 
         [DisplayName("Registry Date")]
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]

@@ -11,9 +11,9 @@ using Schedu.Models;
 
 namespace Schedu.Migrations
 {
-    [DbContext(typeof(BusinessDbContext))]
-    [Migration("20221005152754_NewBusinessProp")]
-    partial class NewBusinessProp
+    [DbContext(typeof(ScheduDbContext))]
+    [Migration("20221005213259_ScheduContext")]
+    partial class ScheduContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,8 +40,32 @@ namespace Schedu.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(25)");
 
+                    b.Property<int>("BusinessOwnerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BusinessPhone")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RegistryDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BusinessId");
+
+                    b.HasIndex("BusinessOwnerId");
+
+                    b.ToTable("Businesses");
+                });
+
+            modelBuilder.Entity("Schedu.Models.BusinessOwner", b =>
+                {
+                    b.Property<int>("BusinessOwnerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BusinessOwnerId"), 1L, 1);
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -60,9 +84,20 @@ namespace Schedu.Migrations
                     b.Property<DateTime>("RegistryDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("BusinessId");
+                    b.HasKey("BusinessOwnerId");
 
-                    b.ToTable("Businesses");
+                    b.ToTable("BusinessesOwners");
+                });
+
+            modelBuilder.Entity("Schedu.Models.Business", b =>
+                {
+                    b.HasOne("Schedu.Models.BusinessOwner", "BusinessOwner")
+                        .WithMany()
+                        .HasForeignKey("BusinessOwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BusinessOwner");
                 });
 #pragma warning restore 612, 618
         }

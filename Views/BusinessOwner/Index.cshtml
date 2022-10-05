@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Schedu.Models.Business>
+﻿@model IEnumerable<Schedu.Models.BusinessOwner>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BusinessName)
+                @Html.DisplayNameFor(model => model.OwnerName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BusinessPhone)
+                @Html.DisplayNameFor(model => model.OwnerPhone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BusinessEmail)
+                @Html.DisplayNameFor(model => model.OwnerEmail)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RegistryDate)
@@ -34,13 +34,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BusinessName)
+                @Html.DisplayFor(modelItem => item.OwnerName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BusinessPhone)
+                @Html.DisplayFor(modelItem => item.OwnerPhone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BusinessEmail)
+                @Html.DisplayFor(modelItem => item.OwnerEmail)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RegistryDate)
@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.IsActive)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BusinessId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BusinessId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BusinessId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.BusinessOwnerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BusinessOwnerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BusinessOwnerId">Delete</a>
             </td>
         </tr>
 }
