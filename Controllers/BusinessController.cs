@@ -140,7 +140,7 @@ namespace Schedu.Controllers
         {
             if (_context.Businesses == null)
             {
-                return Problem("Entity set 'BusinessDbContext.Businesses'  is null.");
+                return Problem("Entity set 'BusinessDbContext.Businesses' is null.");
             }
             var business = await _context.Businesses.FindAsync(id);
             if (business != null)

@@ -44,5 +44,9 @@ namespace Schedu.Models
 
         [DisplayName("Registry Date")]
         public DateTime RegistryDate { get; set; }
+
+
+        [DisplayName("Is Active?")]
+        public bool IsActive { get; set; } = true;
     }
 }
