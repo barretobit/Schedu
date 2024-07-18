@@ -1,0 +1,13 @@
+*/obj/**
+*/bin/**
+*.suo
+*/.vs/**
+*.user
+.vs/**
+*/.sonarqube/**
+.sonarqube/
+**/.vs/**
+/*/packages.lock.json
+output/
+*/*/obj/**
+*/*/bin/**
